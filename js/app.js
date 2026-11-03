@@ -71,7 +71,7 @@
   /* ---------- 商品視窗 ---------- */
   function openModal(id) {
     const p = byId(id);
-    cur = { p, color: 0, size: p.sizes.length === 1 ? p.sizes[0] : '', qty: 1 };
+    cur = { p, color: 0, img: 0, size: p.sizes.length === 1 ? p.sizes[0] : '', qty: 1 };
     lastFocus = document.activeElement;
     $('#mCat').textContent = p.gender + ' · ' + p.type;
     $('#mName').textContent = p.name;
@@ -85,8 +85,14 @@
   }
   function renderModalOpts() {
     const { p } = cur, c = p.colors[cur.color];
-    $('#mImg').src = c.image;
-    $('#mImg').alt = p.name + '（' + c.name + '）';
+    const imgs = c.images || [{ src: c.image, label: '' }];
+    const shot = imgs[Math.min(cur.img, imgs.length - 1)];
+    $('#mImg').src = shot.src;
+    $('#mImg').alt = p.name + '（' + c.name + (shot.label ? '・' + shot.label : '') + '）';
+    $('#mCap').textContent = shot.label;
+    $('#mThumbs').hidden = imgs.length < 2;
+    $('#mThumbs').innerHTML = imgs.map((m, i) =>
+      '<button data-k="' + i + '" aria-label="' + esc(m.label || '第 ' + (i + 1) + ' 張') + '" aria-pressed="' + (m === shot) + '"><img src="' + esc(m.src) + '" alt=""></button>').join('');
     $('#mColorName').textContent = c.name;
     $('#mColors').innerHTML = p.colors.map((x, i) =>
       '<button class="sw" data-i="' + i + '" style="background:' + x.hex + '" aria-label="' + esc(x.name) + '" aria-pressed="' + (i === cur.color) + '"></button>').join('');
@@ -101,6 +107,7 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
   $('#grid').addEventListener('click', e => { const c = e.target.closest('.card'); if (c) openModal(c.dataset.id); });
+  $('#mThumbs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { cur.img = +b.dataset.k; renderModalOpts(); } });
   $('#mColors').addEventListener('click', e => { const b = e.target.closest('.sw'); if (b) { cur.color = +b.dataset.i; renderModalOpts(); } });
   $('#mSizes').addEventListener('click', e => { const b = e.target.closest('.sz'); if (b) { cur.size = b.dataset.s; $('#mWarn').hidden = true; renderModalOpts(); } });
   $('#mMinus').addEventListener('click', () => { cur.qty = Math.max(1, cur.qty - 1); renderModalOpts(); });

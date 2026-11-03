@@ -1,7 +1,8 @@
 // 商品資料：想新增或修改商品，只要照著下面的格式改這個檔案就可以。
 // name 商品名稱｜gender 女裝或男裝｜type 上衣／褲裝／裙洋裝／外套／配件｜price 價格（數字）
-// colors 顏色清單，每個顏色有名稱、色碼、圖片路徑（放在 images/ 資料夾）
-// sizes 尺寸清單｜desc 商品說明｜tag 標籤（NEW、熱銷，不需要就留空白）
+// colors 顏色清單，每個顏色有：name 名稱、hex 色碼、image 列表縮圖、images 商品視窗的多張照片
+// images 的每一張是 { src: "圖片路徑", label: "說明文字" }，第一張會當作主圖，可放任意張數
+// 圖片都放在 images/ 資料夾。sizes 尺寸清單｜desc 商品說明｜tag 標籤（NEW、熱銷，不需要就留空白）
 const PRODUCTS = [
   {
     "id": "p01",
@@ -13,17 +14,71 @@ const PRODUCTS = [
       {
         "name": "白",
         "hex": "#f4f4f1",
-        "image": "images/p01-1.svg"
+        "image": "images/p01-1-front.svg",
+        "images": [
+          {
+            "src": "images/p01-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p01-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p01-1-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p01-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "灰",
         "hex": "#b9bcc0",
-        "image": "images/p01-2.svg"
+        "image": "images/p01-2-front.svg",
+        "images": [
+          {
+            "src": "images/p01-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p01-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p01-2-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p01-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p01-3.svg"
+        "image": "images/p01-3-front.svg",
+        "images": [
+          {
+            "src": "images/p01-3-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p01-3-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p01-3-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p01-3-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -45,12 +100,48 @@ const PRODUCTS = [
       {
         "name": "米白",
         "hex": "#e9e2d3",
-        "image": "images/p02-1.svg"
+        "image": "images/p02-1-front.svg",
+        "images": [
+          {
+            "src": "images/p02-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p02-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p02-1-detail.svg",
+            "label": "細節：領口與鈕扣"
+          },
+          {
+            "src": "images/p02-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "淺藍",
         "hex": "#a9c0d6",
-        "image": "images/p02-2.svg"
+        "image": "images/p02-2-front.svg",
+        "images": [
+          {
+            "src": "images/p02-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p02-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p02-2-detail.svg",
+            "label": "細節：領口與鈕扣"
+          },
+          {
+            "src": "images/p02-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -72,12 +163,48 @@ const PRODUCTS = [
       {
         "name": "燕麥",
         "hex": "#d8cdb8",
-        "image": "images/p03-1.svg"
+        "image": "images/p03-1-front.svg",
+        "images": [
+          {
+            "src": "images/p03-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p03-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p03-1-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p03-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "墨綠",
         "hex": "#3f5a4e",
-        "image": "images/p03-2.svg"
+        "image": "images/p03-2-front.svg",
+        "images": [
+          {
+            "src": "images/p03-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p03-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p03-2-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p03-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -99,12 +226,48 @@ const PRODUCTS = [
       {
         "name": "深藍",
         "hex": "#33475f",
-        "image": "images/p04-1.svg"
+        "image": "images/p04-1-front.svg",
+        "images": [
+          {
+            "src": "images/p04-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p04-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p04-1-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p04-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "牛仔藍",
         "hex": "#8fa7c2",
-        "image": "images/p04-2.svg"
+        "image": "images/p04-2-front.svg",
+        "images": [
+          {
+            "src": "images/p04-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p04-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p04-2-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p04-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -128,12 +291,48 @@ const PRODUCTS = [
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p05-1.svg"
+        "image": "images/p05-1-front.svg",
+        "images": [
+          {
+            "src": "images/p05-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p05-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p05-1-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p05-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "卡其",
         "hex": "#b8a98a",
-        "image": "images/p05-2.svg"
+        "image": "images/p05-2-front.svg",
+        "images": [
+          {
+            "src": "images/p05-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p05-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p05-2-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p05-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -155,12 +354,48 @@ const PRODUCTS = [
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p06-1.svg"
+        "image": "images/p06-1-front.svg",
+        "images": [
+          {
+            "src": "images/p06-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p06-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p06-1-detail.svg",
+            "label": "細節：腰頭與拉鍊位置"
+          },
+          {
+            "src": "images/p06-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "駝",
         "hex": "#b08d65",
-        "image": "images/p06-2.svg"
+        "image": "images/p06-2-front.svg",
+        "images": [
+          {
+            "src": "images/p06-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p06-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p06-2-detail.svg",
+            "label": "細節：腰頭與拉鍊位置"
+          },
+          {
+            "src": "images/p06-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -182,12 +417,48 @@ const PRODUCTS = [
       {
         "name": "白",
         "hex": "#f4f4f1",
-        "image": "images/p07-1.svg"
+        "image": "images/p07-1-front.svg",
+        "images": [
+          {
+            "src": "images/p07-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p07-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p07-1-detail.svg",
+            "label": "細節：領口與腰線"
+          },
+          {
+            "src": "images/p07-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "淺藍",
         "hex": "#a9c0d6",
-        "image": "images/p07-2.svg"
+        "image": "images/p07-2-front.svg",
+        "images": [
+          {
+            "src": "images/p07-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p07-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p07-2-detail.svg",
+            "label": "細節：領口與腰線"
+          },
+          {
+            "src": "images/p07-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -209,12 +480,48 @@ const PRODUCTS = [
       {
         "name": "墨綠",
         "hex": "#3f5a4e",
-        "image": "images/p08-1.svg"
+        "image": "images/p08-1-front.svg",
+        "images": [
+          {
+            "src": "images/p08-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p08-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p08-1-detail.svg",
+            "label": "細節：領口與腰線"
+          },
+          {
+            "src": "images/p08-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "酒紅",
         "hex": "#7a2e3a",
-        "image": "images/p08-2.svg"
+        "image": "images/p08-2-front.svg",
+        "images": [
+          {
+            "src": "images/p08-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p08-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p08-2-detail.svg",
+            "label": "細節：領口與腰線"
+          },
+          {
+            "src": "images/p08-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -236,12 +543,48 @@ const PRODUCTS = [
       {
         "name": "卡其",
         "hex": "#b8a98a",
-        "image": "images/p09-1.svg"
+        "image": "images/p09-1-front.svg",
+        "images": [
+          {
+            "src": "images/p09-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p09-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p09-1-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p09-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p09-2.svg"
+        "image": "images/p09-2-front.svg",
+        "images": [
+          {
+            "src": "images/p09-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p09-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p09-2-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p09-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -263,12 +606,48 @@ const PRODUCTS = [
       {
         "name": "駝",
         "hex": "#b08d65",
-        "image": "images/p10-1.svg"
+        "image": "images/p10-1-front.svg",
+        "images": [
+          {
+            "src": "images/p10-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p10-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p10-1-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p10-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "灰",
         "hex": "#b9bcc0",
-        "image": "images/p10-2.svg"
+        "image": "images/p10-2-front.svg",
+        "images": [
+          {
+            "src": "images/p10-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p10-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p10-2-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p10-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -290,12 +669,48 @@ const PRODUCTS = [
       {
         "name": "米",
         "hex": "#e6dcc6",
-        "image": "images/p11-1.svg"
+        "image": "images/p11-1-front.svg",
+        "images": [
+          {
+            "src": "images/p11-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p11-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p11-1-detail.svg",
+            "label": "細節：五金與縫線"
+          },
+          {
+            "src": "images/p11-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p11-2.svg"
+        "image": "images/p11-2-front.svg",
+        "images": [
+          {
+            "src": "images/p11-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p11-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p11-2-detail.svg",
+            "label": "細節：五金與縫線"
+          },
+          {
+            "src": "images/p11-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -315,12 +730,48 @@ const PRODUCTS = [
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p12-1.svg"
+        "image": "images/p12-1-front.svg",
+        "images": [
+          {
+            "src": "images/p12-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p12-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p12-1-detail.svg",
+            "label": "細節：五金與縫線"
+          },
+          {
+            "src": "images/p12-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "駝",
         "hex": "#b08d65",
-        "image": "images/p12-2.svg"
+        "image": "images/p12-2-front.svg",
+        "images": [
+          {
+            "src": "images/p12-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p12-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p12-2-detail.svg",
+            "label": "細節：五金與縫線"
+          },
+          {
+            "src": "images/p12-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -340,17 +791,71 @@ const PRODUCTS = [
       {
         "name": "白",
         "hex": "#f4f4f1",
-        "image": "images/p13-1.svg"
+        "image": "images/p13-1-front.svg",
+        "images": [
+          {
+            "src": "images/p13-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p13-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p13-1-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p13-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p13-2.svg"
+        "image": "images/p13-2-front.svg",
+        "images": [
+          {
+            "src": "images/p13-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p13-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p13-2-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p13-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "灰",
         "hex": "#b9bcc0",
-        "image": "images/p13-3.svg"
+        "image": "images/p13-3-front.svg",
+        "images": [
+          {
+            "src": "images/p13-3-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p13-3-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p13-3-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p13-3-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -372,12 +877,48 @@ const PRODUCTS = [
       {
         "name": "白",
         "hex": "#f4f4f1",
-        "image": "images/p14-1.svg"
+        "image": "images/p14-1-front.svg",
+        "images": [
+          {
+            "src": "images/p14-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p14-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p14-1-detail.svg",
+            "label": "細節：領口與鈕扣"
+          },
+          {
+            "src": "images/p14-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "淺藍",
         "hex": "#a9c0d6",
-        "image": "images/p14-2.svg"
+        "image": "images/p14-2-front.svg",
+        "images": [
+          {
+            "src": "images/p14-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p14-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p14-2-detail.svg",
+            "label": "細節：領口與鈕扣"
+          },
+          {
+            "src": "images/p14-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -399,12 +940,48 @@ const PRODUCTS = [
       {
         "name": "深灰",
         "hex": "#4a4f55",
-        "image": "images/p15-1.svg"
+        "image": "images/p15-1-front.svg",
+        "images": [
+          {
+            "src": "images/p15-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p15-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p15-1-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p15-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "海軍藍",
         "hex": "#27364d",
-        "image": "images/p15-2.svg"
+        "image": "images/p15-2-front.svg",
+        "images": [
+          {
+            "src": "images/p15-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p15-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p15-2-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p15-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -426,12 +1003,48 @@ const PRODUCTS = [
       {
         "name": "灰",
         "hex": "#b9bcc0",
-        "image": "images/p16-1.svg"
+        "image": "images/p16-1-front.svg",
+        "images": [
+          {
+            "src": "images/p16-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p16-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p16-1-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p16-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p16-2.svg"
+        "image": "images/p16-2-front.svg",
+        "images": [
+          {
+            "src": "images/p16-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p16-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p16-2-detail.svg",
+            "label": "細節：領口與車縫"
+          },
+          {
+            "src": "images/p16-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -453,12 +1066,48 @@ const PRODUCTS = [
       {
         "name": "深藍",
         "hex": "#33475f",
-        "image": "images/p17-1.svg"
+        "image": "images/p17-1-front.svg",
+        "images": [
+          {
+            "src": "images/p17-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p17-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p17-1-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p17-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "牛仔藍",
         "hex": "#8fa7c2",
-        "image": "images/p17-2.svg"
+        "image": "images/p17-2-front.svg",
+        "images": [
+          {
+            "src": "images/p17-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p17-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p17-2-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p17-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -482,12 +1131,48 @@ const PRODUCTS = [
       {
         "name": "卡其",
         "hex": "#b8a98a",
-        "image": "images/p18-1.svg"
+        "image": "images/p18-1-front.svg",
+        "images": [
+          {
+            "src": "images/p18-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p18-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p18-1-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p18-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "橄欖",
         "hex": "#6b6f4a",
-        "image": "images/p18-2.svg"
+        "image": "images/p18-2-front.svg",
+        "images": [
+          {
+            "src": "images/p18-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p18-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p18-2-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p18-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -511,12 +1196,48 @@ const PRODUCTS = [
       {
         "name": "灰",
         "hex": "#b9bcc0",
-        "image": "images/p19-1.svg"
+        "image": "images/p19-1-front.svg",
+        "images": [
+          {
+            "src": "images/p19-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p19-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p19-1-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p19-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p19-2.svg"
+        "image": "images/p19-2-front.svg",
+        "images": [
+          {
+            "src": "images/p19-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p19-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p19-2-detail.svg",
+            "label": "細節：腰頭與口袋"
+          },
+          {
+            "src": "images/p19-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -538,12 +1259,48 @@ const PRODUCTS = [
       {
         "name": "牛仔藍",
         "hex": "#8fa7c2",
-        "image": "images/p20-1.svg"
+        "image": "images/p20-1-front.svg",
+        "images": [
+          {
+            "src": "images/p20-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p20-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p20-1-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p20-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "深藍",
         "hex": "#33475f",
-        "image": "images/p20-2.svg"
+        "image": "images/p20-2-front.svg",
+        "images": [
+          {
+            "src": "images/p20-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p20-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p20-2-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p20-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -565,12 +1322,48 @@ const PRODUCTS = [
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p21-1.svg"
+        "image": "images/p21-1-front.svg",
+        "images": [
+          {
+            "src": "images/p21-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p21-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p21-1-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p21-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "海軍藍",
         "hex": "#27364d",
-        "image": "images/p21-2.svg"
+        "image": "images/p21-2-front.svg",
+        "images": [
+          {
+            "src": "images/p21-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p21-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p21-2-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p21-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -592,12 +1385,48 @@ const PRODUCTS = [
       {
         "name": "海軍藍",
         "hex": "#27364d",
-        "image": "images/p22-1.svg"
+        "image": "images/p22-1-front.svg",
+        "images": [
+          {
+            "src": "images/p22-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p22-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p22-1-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p22-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p22-2.svg"
+        "image": "images/p22-2-front.svg",
+        "images": [
+          {
+            "src": "images/p22-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p22-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p22-2-detail.svg",
+            "label": "細節：拉鍊與口袋"
+          },
+          {
+            "src": "images/p22-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -619,12 +1448,48 @@ const PRODUCTS = [
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p23-1.svg"
+        "image": "images/p23-1-front.svg",
+        "images": [
+          {
+            "src": "images/p23-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p23-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p23-1-detail.svg",
+            "label": "細節：扣頭與皮帶孔"
+          },
+          {
+            "src": "images/p23-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "駝",
         "hex": "#b08d65",
-        "image": "images/p23-2.svg"
+        "image": "images/p23-2-front.svg",
+        "images": [
+          {
+            "src": "images/p23-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p23-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p23-2-detail.svg",
+            "label": "細節：扣頭與皮帶孔"
+          },
+          {
+            "src": "images/p23-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
@@ -646,17 +1511,71 @@ const PRODUCTS = [
       {
         "name": "黑",
         "hex": "#2a2d31",
-        "image": "images/p24-1.svg"
+        "image": "images/p24-1-front.svg",
+        "images": [
+          {
+            "src": "images/p24-1-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p24-1-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p24-1-detail.svg",
+            "label": "細節：帽型與縫線"
+          },
+          {
+            "src": "images/p24-1-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "卡其",
         "hex": "#b8a98a",
-        "image": "images/p24-2.svg"
+        "image": "images/p24-2-front.svg",
+        "images": [
+          {
+            "src": "images/p24-2-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p24-2-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p24-2-detail.svg",
+            "label": "細節：帽型與縫線"
+          },
+          {
+            "src": "images/p24-2-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       },
       {
         "name": "海軍藍",
         "hex": "#27364d",
-        "image": "images/p24-3.svg"
+        "image": "images/p24-3-front.svg",
+        "images": [
+          {
+            "src": "images/p24-3-front.svg",
+            "label": "正面"
+          },
+          {
+            "src": "images/p24-3-back.svg",
+            "label": "背面"
+          },
+          {
+            "src": "images/p24-3-detail.svg",
+            "label": "細節：帽型與縫線"
+          },
+          {
+            "src": "images/p24-3-fabric.svg",
+            "label": "面料特寫"
+          }
+        ]
       }
     ],
     "sizes": [
