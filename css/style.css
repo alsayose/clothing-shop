@@ -1,0 +1,128 @@
+/* 簡約清爽：白底、留白多、單一深藍色強調 */
+:root{
+  --bg:#ffffff; --soft:#f5f6f7; --ink:#14181c; --muted:#66707a; --line:#e3e6e9;
+  --accent:#2b4a6f; --accent-ink:#ffffff; --warn:#b3402a;
+  --font:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  --latin:"Jost","Noto Sans TC",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.7}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.inner{max-width:1120px;margin:0 auto;padding-inline:20px}
+[hidden]{display:none!important}
+
+/* 頂部 */
+.site{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.bar{max-width:1120px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:500;font-size:19px;letter-spacing:.06em;color:var(--ink);text-decoration:none;margin-right:auto}
+.gnav{display:flex;gap:4px}
+.gnav button{background:none;border:0;padding:6px 12px;color:var(--muted);border-bottom:2px solid transparent}
+.gnav button.on{color:var(--ink);border-color:var(--ink);font-weight:500}
+.cart-btn{background:var(--ink);color:#fff;border:0;border-radius:99px;padding:7px 16px;font-size:14px}
+.cart-btn span{display:inline-block;min-width:20px;margin-left:4px;background:#fff;color:var(--ink);border-radius:99px;font-family:var(--latin);font-size:13px;text-align:center}
+
+/* 首頁橫幅 */
+.hero{background:var(--soft);padding:72px 0 64px}
+.eyebrow{font-family:var(--latin);font-size:12px;letter-spacing:.22em;color:var(--muted);margin:0 0 8px;text-transform:uppercase}
+.hero h1{font-size:clamp(30px,6vw,52px);font-weight:300;letter-spacing:.04em;line-height:1.25;margin:0 0 16px;text-wrap:balance}
+.lead{max-width:520px;color:var(--muted);margin:0 0 28px}
+.btn{display:inline-block;border:1px solid var(--ink);background:var(--bg);color:var(--ink);padding:10px 26px;text-decoration:none;border-radius:2px;letter-spacing:.06em}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
+.btn.wide{width:100%;text-align:center}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* 篩選與商品 */
+.shop{padding:40px 0 56px}
+.filters{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:10px}
+.filters input,.filters select,.field input,.field select,.field textarea{border:1px solid var(--line);background:var(--bg);padding:8px 12px;border-radius:2px;min-width:0;width:100%}
+.count{color:var(--muted);font-size:13px;margin:14px 0}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 16px}
+.card{background:none;border:0;padding:0;text-align:left;display:block;width:100%}
+.card .ph{position:relative;aspect-ratio:4/5;background:var(--soft);overflow:hidden}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .ph img{transform:scale(1.04)}
+.tag{position:absolute;left:8px;top:8px;background:var(--ink);color:#fff;font-family:var(--latin);font-size:11px;letter-spacing:.1em;padding:1px 8px}
+.card h3{font-size:14px;font-weight:400;margin:10px 0 2px}
+.card .meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-family:var(--latin);font-weight:500;font-size:15px;margin:0}
+.dots{display:flex;gap:4px}
+.dots i{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.18)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:56px 0}
+
+/* 資訊區 */
+.info{background:var(--soft);padding:44px 0}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.info h3{font-size:15px;margin:0 0 8px;letter-spacing:.06em}
+.info p{margin:0;color:var(--muted);font-size:14px}
+.site-foot{padding:20px 0;font-size:13px;color:var(--muted)}
+.site-foot .inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* 遮罩、彈窗、購物車 */
+.overlay{position:fixed;inset:0;background:rgba(20,24,28,.5);z-index:30}
+.x{background:none;border:0;font-size:28px;line-height:1;color:var(--ink);padding:4px 10px}
+.modal{position:fixed;z-index:40;left:50%;top:50%;transform:translate(-50%,-50%);width:min(860px,calc(100% - 32px));max-height:calc(100% - 32px);overflow:auto;background:var(--bg);display:grid;grid-template-columns:1fr 1fr}
+.modal>.x{position:absolute;right:6px;top:6px;z-index:2;background:rgba(255,255,255,.8)}
+.m-img{background:var(--soft)}
+.m-img img{width:100%;height:100%;object-fit:cover}
+.m-body{padding:28px 26px}
+.m-body h2{font-size:22px;font-weight:500;margin:0 0 6px}
+.m-body .price{font-size:20px;margin-bottom:10px}
+.desc{color:var(--muted);margin:0 0 18px}
+.opt{margin-bottom:16px}
+.opt-t{font-size:13px;color:var(--muted);margin-bottom:8px}
+.opt-t b{color:var(--ink);font-weight:500}
+.swatches,.sizes{display:flex;gap:8px;flex-wrap:wrap}
+.sw{width:30px;height:30px;border-radius:50%;border:1px solid rgba(0,0,0,.2);padding:0;box-shadow:0 0 0 2px var(--bg) inset}
+.sw[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:2px}
+.sz{min-width:44px;padding:6px 10px;background:var(--bg);border:1px solid var(--line);border-radius:2px;font-family:var(--latin)}
+.sz[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line)}
+.qty button{background:none;border:0;width:34px;height:34px;font-size:16px}
+.qty span{min-width:34px;text-align:center;font-family:var(--latin)}
+.warn{color:var(--warn);font-size:13px;margin:0 0 8px}
+
+.drawer{position:fixed;z-index:40;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--bg);display:flex;flex-direction:column;box-shadow:-8px 0 30px rgba(0,0,0,.12)}
+.d-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 14px 20px;border-bottom:1px solid var(--line)}
+.d-head h2{font-size:17px;margin:0}
+.d-body{flex:1;overflow:auto;padding:16px 20px 24px}
+.line{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.line img{width:72px;height:90px;object-fit:cover;background:var(--soft)}
+.line h4{margin:0;font-size:14px;font-weight:500}
+.line .sub{font-size:12px;color:var(--muted)}
+.line .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.line .rm{background:none;border:0;color:var(--muted);font-size:12px;text-decoration:underline;padding:0}
+.sum{padding:14px 0;font-size:14px}
+.sum div{display:flex;justify-content:space-between;padding:2px 0}
+.sum .total{font-weight:500;font-size:17px;border-top:1px solid var(--line);margin-top:6px;padding-top:8px}
+.hint{font-size:12px;color:var(--muted);margin:2px 0 0}
+.field{display:flex;flex-direction:column;gap:4px;margin-bottom:10px;font-size:13px;color:var(--muted)}
+.field textarea{resize:vertical;min-height:60px}
+.order-box{width:100%;min-height:200px;border:1px solid var(--line);padding:10px;font-size:13px;line-height:1.6;background:var(--soft)}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.links .btn{padding:9px 6px;text-align:center;font-size:14px}
+.sec-t{font-size:14px;font-weight:500;margin:18px 0 8px}
+.back{background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;font-size:13px;margin-bottom:10px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 18px;border-radius:99px;font-size:14px;z-index:60}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .filters{grid-template-columns:1fr 1fr}
+  .filters input{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}
+  .cols3{grid-template-columns:1fr}
+  .hero{padding:48px 0 44px}
+  .bar{gap:8px;padding:10px 16px}
+  .brand{font-size:16px}
+  .modal{grid-template-columns:1fr}
+  .m-img{aspect-ratio:4/3}
+  .m-img img{object-fit:contain}
+  .m-body{padding:20px 18px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

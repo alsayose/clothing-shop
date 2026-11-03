@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>示範服飾店｜男女裝日常穿搭</title>
+<meta name="description" content="男裝、女裝全系列，線上挑選，透過 LINE 或 Instagram 聯絡下單。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="brand" href="#top" id="brandName">示範服飾店</a>
+    <nav class="gnav" aria-label="分類">
+      <button data-gender="" class="on">全部</button>
+      <button data-gender="女裝">女裝</button>
+      <button data-gender="男裝">男裝</button>
+    </nav>
+    <button class="cart-btn" id="openCart" aria-label="開啟購物車">購物車 <span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="inner">
+      <p class="eyebrow">NEW SEASON</p>
+      <h1 id="tagline">日常穿搭，簡單就好</h1>
+      <p class="lead">男裝、女裝全系列。挑好喜歡的款式，加入購物車，再用 LINE 或 Instagram 傳訂單給我們，由店家確認庫存後安排出貨。</p>
+      <a class="btn primary" href="#shop">開始逛逛</a>
+    </div>
+  </section>
+
+  <section class="shop" id="shop">
+    <div class="inner">
+      <div class="filters">
+        <input type="search" id="q" placeholder="搜尋商品名稱" aria-label="搜尋商品">
+        <select id="fType" aria-label="商品類型"></select>
+        <select id="fSize" aria-label="尺寸"></select>
+        <select id="fPrice" aria-label="價格">
+          <option value="">全部價格</option>
+          <option value="0-999">$999 以下</option>
+          <option value="1000-1999">$1,000–1,999</option>
+          <option value="2000-99999">$2,000 以上</option>
+        </select>
+        <select id="fSort" aria-label="排序">
+          <option value="new">預設排序</option>
+          <option value="asc">價格由低到高</option>
+          <option value="desc">價格由高到低</option>
+        </select>
+      </div>
+      <p class="count" id="resultCount" aria-live="polite"></p>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="info" id="about">
+    <div class="inner cols3">
+      <div><h3>配送方式</h3><p id="shipText"></p></div>
+      <div><h3>退換貨</h3><p>收到商品 7 天內，未穿著、吊牌完整可申請退換貨。請先聯絡我們，不要直接寄回。</p></div>
+      <div><h3>聯絡我們</h3><p id="contactText"></p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot"><div class="inner"><span id="footName"></span><span>示範網站，商品與圖片皆為示範資料</span></div></footer>
+
+<div class="overlay" id="overlay" hidden></div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mName" hidden>
+  <button class="x" id="closeModal" aria-label="關閉">×</button>
+  <div class="m-img"><img id="mImg" alt=""></div>
+  <div class="m-body">
+    <p class="eyebrow" id="mCat"></p>
+    <h2 id="mName"></h2>
+    <p class="price" id="mPrice"></p>
+    <p id="mDesc" class="desc"></p>
+    <div class="opt"><div class="opt-t">顏色：<b id="mColorName"></b></div><div class="swatches" id="mColors"></div></div>
+    <div class="opt"><div class="opt-t">尺寸</div><div class="sizes" id="mSizes"></div></div>
+    <div class="opt qty-row"><div class="opt-t">數量</div>
+      <div class="qty"><button id="mMinus" aria-label="減少">−</button><span id="mQty">1</span><button id="mPlus" aria-label="增加">＋</button></div>
+    </div>
+    <p class="warn" id="mWarn" hidden>請先選擇尺寸</p>
+    <button class="btn primary wide" id="mAdd">加入購物車</button>
+  </div>
+</div>
+
+<aside class="drawer" id="drawer" aria-label="購物車" hidden>
+  <div class="d-head"><h2>購物車</h2><button class="x" id="closeCart" aria-label="關閉購物車">×</button></div>
+  <div class="d-body" id="cartBody"></div>
+</aside>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
